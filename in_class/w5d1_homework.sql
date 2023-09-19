@@ -65,18 +65,13 @@ FROM staff;
 
 -- 6. How many different district names are there?
 
-SELECT * FROM customer
-ORDER BY first_name ASC;
--- result = 599 entries
-SELECT DISTINCT first_name
-FROM customer;
--- result = 591 entries
-SELECT DISTINCT last_name
-FROM customer;
--- result = 599 entries
+SELECT *
+FROM address;
 
--- Answer: If talking about first names, then there are 591 unique names. If we are talking about full names or last names
--- then there are 599 unique names
+SELECT COUNT(DISTINCT district)
+FROM address;
+
+-- Answer: 378 different district names 
 
 -- 7. What film has the most actors in it? (use film_actor table and get film_id)
 SELECT COUNT(actor_id), film_id
